@@ -1,45 +1,29 @@
 package es.s2o.selenium.services;
 
-import es.s2o.selenium.builders.ClientDataBuilder;
-import es.s2o.selenium.builders.ReservationDataBuilder;
-import es.s2o.selenium.domain.Client;
-import es.s2o.selenium.domain.Reservation;
+import es.s2o.selenium.builders.SearchFlightCriteriaBuilder;
+import es.s2o.selenium.builders.SearchFlightCriteriaDataBuilder;
+import es.s2o.selenium.domain.SearchFlightCriteria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-/**
- * Created by sacrists on 26.02.17.
- * <p>
- * Class to interact with the API of the application and, for example, add reservations to later use them from the UI
- */
 public class SearchFlightsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    public List<Reservation> addSearchFlightCriteria(int numberOfReservations) {
-        LOGGER.debug("addReservations starts, creating [{}]", numberOfReservations);
+    public SearchFlightCriteria addSearchFlightCriteria() {
+        LOGGER.debug("addSearchFlightCriteria starts");
 
-        List<Reservation> reservationDto = IntStream.range(0, numberOfReservations)
-                .mapToObj(this::generateReservations)
-                .collect(Collectors.toList());
+        SearchFlightCriteria searchFlightCriteria = this.generateSearchCriteria();
 
-        // TODO interact with the API of the application (in this case this app is an example)
-
-        return reservationDto;
+        return searchFlightCriteria;
     }
 
-    private Reservation generateReservations(int i) {
-        Client client = ClientDataBuilder.defaultClient(i).build();
-        return ReservationDataBuilder.defaultReservation(i, client).build();
+    private SearchFlightCriteria generateSearchCriteria() {
+        return SearchFlightCriteriaDataBuilder.defaultCriteria().build();
     }
 
     public void clean() {
         LOGGER.debug("clean");
-
-        // TODO interact with the API of the application (in this case this app is an example)
     }
 }

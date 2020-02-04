@@ -10,9 +10,6 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features/reservations",
-        glue = "es.s2o.selenium.stepsdefs.reservations")
-public class ReservationTest extends RunnerBase{
-
-
-}
+@CucumberOptions(features = "src/test/resources/features/searchflights",
+        glue = "es.s2o.selenium.stepsdefs.searchflights")
+public class SearchFlightsTest extends RunnerBase{}

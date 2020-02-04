@@ -3,7 +3,6 @@ package es.s2o.selenium.domain;
 import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
 
 public class SearchFlightCriteriaDto {
-
     private String origin;
     private String destiny;
     private String date;

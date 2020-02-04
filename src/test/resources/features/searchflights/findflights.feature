@@ -7,7 +7,7 @@ Feature: Find available flights
 
   Scenario: Initial search
     Given I'm in the main page
-    When I try to find a fly
-      | Origin   | Destination | Outbound   | Return | passengers |
-      | Almeria  | Alicante    | NEXT_WEEK  |        |      1     |
+    When I try to find a flight
+      | Origin     | Destination | Outbound   | Return   | passengers |
+      | Barcelona  | Asturias    | NEXT_WEEK  |          |      1     |
     Then I get available flight

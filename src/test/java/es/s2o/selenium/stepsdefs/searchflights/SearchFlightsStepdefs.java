@@ -1,4 +1,4 @@
-package es.s2o.selenium.stepsdefs.reservations;
+package es.s2o.selenium.stepsdefs.searchflights;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -29,14 +29,14 @@ public class SearchFlightsStepdefs {
     @Steps
     private SearchFlightsService searchFlightsService;
 
-    private SearchPage reservationPage;
+    private SearchPage searchPage;
 
     private SearchFlightCriteriaDto searchFlightCriteria;
 
     @Before
     public void beforeScenario() {
         LOGGER.debug("beforeScenario starts");
-        searchFlightsService.addReservations(2);
+        searchFlightsService.addSearchFlightCriteria();
     }
 
     @After
@@ -49,12 +49,12 @@ public class SearchFlightsStepdefs {
     public void iMInTheMainPage() throws Throwable {
         LOGGER.debug("iMInTheMainPage starts");
 
-        reservationPage.openAt(WEB_ROOT + HOME);
+        searchPage.openAt(WEB_ROOT + HOME);
     }
 
-    @When("^I try to find a fly$")
-    public void iTryToFindAFly(SearchFlightCriteriaDto searchFlightCriteriaDto) throws Throwable {
-        LOGGER.debug("iTryToFindAFly starts", searchFlightCriteriaDto.getOrigin());
+    @When("^I try to find a flight$")
+    public void iTryToFindAFlight(SearchFlightCriteriaDto searchFlightCriteriaDto) throws Throwable {
+        LOGGER.debug("iTryToFindAFlight starts");
 
         searchFlightCriteria = searchFlightCriteriaDto;
     }
@@ -63,7 +63,5 @@ public class SearchFlightsStepdefs {
     public void iGetAvailableFlight() throws Throwable {
         LOGGER.debug("iGetAvailableFlight starts");
 
-        List<SearchFlightCriteriaDto> actualReservations = reservationListPage.getReservationList();
-        assertThat(actualReservations).as("Reservation list").usingFieldByFieldElementComparator().containsExactlyElementsOf(reservations);
     }
 }
