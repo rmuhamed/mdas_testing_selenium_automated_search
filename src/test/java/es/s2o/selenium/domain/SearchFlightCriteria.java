@@ -2,11 +2,10 @@ package es.s2o.selenium.domain;
 
 public class SearchFlightCriteria {
     private String origin;
-    private String destiny;
-    private String departureDate;
-    private Integer adultPassengers;
-    private Integer childrenPassengers;
-    private Integer babiesPassengers;
+    private String destination;
+    private String outboundDate;
+    private String returnDate;
+    private Integer passengers;
 
     public String getOrigin() {
         return origin;
@@ -16,43 +15,35 @@ public class SearchFlightCriteria {
         this.origin = origin;
     }
 
-    public String getDestiny() {
-        return destiny;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setDestiny(String destiny) {
-        this.destiny = destiny;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public String getDepartureDate() {
-        return departureDate;
+    public String getOutboundDate() {
+        return outboundDate;
     }
 
-    public void setDepartureDate(String departureDate) {
-        this.departureDate = departureDate;
+    public void setOutboundDate(String outboundDate) {
+        this.outboundDate = outboundDate;
     }
 
-    public Integer getAdultPassengers() {
-        return adultPassengers;
+    public String getReturnDate() {
+        return returnDate;
     }
 
-    public void setAdultPassengers(Integer adultPassengers) {
-        this.adultPassengers = adultPassengers;
+    public void setReturnDate(String returnDate) {
+        this.returnDate = returnDate;
     }
 
-    public Integer getChildrenPassengers() {
-        return childrenPassengers;
+    public Integer getPassengers() {
+        return passengers;
     }
 
-    public void setChildrenPassengers(Integer childrenPassengers) {
-        this.childrenPassengers = childrenPassengers;
-    }
-
-    public Integer getBabiesPassengers() {
-        return babiesPassengers;
-    }
-
-    public void setBabiesPassengers(Integer babiesPassengers) {
-        this.babiesPassengers = babiesPassengers;
+    public void setPassengers(Integer passengers) {
+        this.passengers = passengers;
     }
 }

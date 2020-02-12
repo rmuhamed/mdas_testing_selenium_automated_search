@@ -4,11 +4,10 @@ import es.s2o.selenium.domain.SearchFlightCriteria;
 
 public class SearchFlightCriteriaBuilder {
     private String origin;
-    private String destiny;
-    private String departureDate;
-    private Integer adultPassengers;
-    private Integer childrenPassengers;
-    private Integer babiesPassengers;
+    private String destination;
+    private String outbound_date;
+    private String return_date;
+    private Integer passengers;
 
     private SearchFlightCriteriaBuilder(){}
 
@@ -19,11 +18,10 @@ public class SearchFlightCriteriaBuilder {
     public SearchFlightCriteria build() {
        SearchFlightCriteria someSearchFlightCriteria = new SearchFlightCriteria();
        someSearchFlightCriteria.setOrigin(this.origin);
-       someSearchFlightCriteria.setDestiny(this.destiny);
-       someSearchFlightCriteria.setDepartureDate(this.departureDate);
-       someSearchFlightCriteria.setAdultPassengers(this.adultPassengers);
-       someSearchFlightCriteria.setChildrenPassengers(this.childrenPassengers);
-       someSearchFlightCriteria.setBabiesPassengers(this.babiesPassengers);
+       someSearchFlightCriteria.setDestination(this.destination);
+       someSearchFlightCriteria.setOutboundDate(this.outbound_date);
+       someSearchFlightCriteria.setReturnDate(this.return_date);
+       someSearchFlightCriteria.setPassengers(this.passengers);
 
        return someSearchFlightCriteria;
     }
@@ -33,28 +31,23 @@ public class SearchFlightCriteriaBuilder {
         return this;
     }
 
-    public SearchFlightCriteriaBuilder withDestiny(String destiny) {
-        this.destiny = destiny;
+    public SearchFlightCriteriaBuilder withDestination(String destiny) {
+        this.destination = destiny;
         return this;
     }
 
-    public SearchFlightCriteriaBuilder withDepartureDate(String departureDate) {
-        this.departureDate = departureDate;
+    public SearchFlightCriteriaBuilder withOutboundDate(String departureDate) {
+        this.outbound_date = departureDate;
         return this;
     }
 
-    public SearchFlightCriteriaBuilder withAdultPassengers(Integer adultPassengers) {
-        this.adultPassengers = adultPassengers;
+    public SearchFlightCriteriaBuilder withReturnDate(String returnDate) {
+        this.return_date = return_date;
         return this;
     }
 
-    public SearchFlightCriteriaBuilder withChildrenPassengers(Integer childrenPassengers) {
-        this.childrenPassengers = childrenPassengers;
-        return this;
-    }
-
-    public SearchFlightCriteriaBuilder withBabiesPassengers(Integer babiesPassengers) {
-        this.babiesPassengers = babiesPassengers;
+    public SearchFlightCriteriaBuilder withPassengers(Integer passengers) {
+        this.passengers = passengers;
         return this;
     }
 }

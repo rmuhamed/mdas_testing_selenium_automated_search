@@ -1,22 +1,25 @@
 package es.s2o.selenium.services;
 
-import es.s2o.selenium.builders.SearchFlightCriteriaBuilder;
 import es.s2o.selenium.builders.SearchFlightCriteriaDataBuilder;
 import es.s2o.selenium.domain.SearchFlightCriteria;
+import es.s2o.selenium.domain.SearchFlightCriteriaDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchFlightsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    public SearchFlightCriteria addSearchFlightCriteria() {
+    public List<SearchFlightCriteria> addSearchFlightCriteria() {
         LOGGER.debug("addSearchFlightCriteria starts");
 
-        SearchFlightCriteria searchFlightCriteria = this.generateSearchCriteria();
+        List<SearchFlightCriteria> searchFlightCriteriaDto = new ArrayList<>(1);
+        searchFlightCriteriaDto.add(this.generateSearchCriteria());
 
-        return searchFlightCriteria;
+        return searchFlightCriteriaDto;
     }
 
     private SearchFlightCriteria generateSearchCriteria() {

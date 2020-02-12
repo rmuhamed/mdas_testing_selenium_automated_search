@@ -27,11 +27,11 @@ public class SearchPage extends PageObjectBase {
         display.click();
         typeInto(txtOrigin, criteriaDto.getOrigin());
         display.click();
-        typeInto(txtDestiny, criteriaDto.getDestiny());
+        typeInto(txtDestiny, criteriaDto.getDestination());
         display.click();
-        typeInto(txtDate, criteriaDto.getDate());
+        typeInto(txtDate, criteriaDto.getOutbound_date());
         display.click();
-        typeInto(txtAdultPassengersNumber, criteriaDto.getAdults());
+        typeInto(txtAdultPassengersNumber, criteriaDto.getReturn_date());
 
         btnSave.click();
     }

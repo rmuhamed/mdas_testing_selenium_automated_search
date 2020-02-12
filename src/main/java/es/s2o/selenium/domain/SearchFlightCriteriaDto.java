@@ -4,14 +4,10 @@ import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
 
 public class SearchFlightCriteriaDto {
     private String origin;
-    private String destiny;
-    private String date;
-    private String adults;
-    private String childrens;
-    private String babies;
-
-    @XStreamConverter(TableColorConverter.class)
-    private String color;
+    private String destination;
+    private String outbound_date;
+    private String return_date;
+    private String passengers;
 
     public SearchFlightCriteriaDto() {}
 
@@ -23,51 +19,35 @@ public class SearchFlightCriteriaDto {
         this.origin = origin;
     }
 
-    public String getDestiny() {
-        return destiny;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setDestiny(String destiny) {
-        this.destiny = destiny;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public String getDate() {
-        return date;
+    public String getOutbound_date() {
+        return outbound_date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setOutbound_date(String outbound_date) {
+        this.outbound_date = outbound_date;
     }
 
-    public String getAdults() {
-        return adults;
+    public String getReturn_date() {
+        return return_date;
     }
 
-    public void setAdults(String adults) {
-        this.adults = adults;
+    public void setReturn_date(String return_date) {
+        this.return_date = return_date;
     }
 
-    public String getChildrens() {
-        return childrens;
+    public String getPassengers() {
+        return passengers;
     }
 
-    public void setChildrens(String childrens) {
-        this.childrens = childrens;
-    }
-
-    public String getBabies() {
-        return babies;
-    }
-
-    public void setBabies(String babies) {
-        this.babies = babies;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setPassengers(String passengers) {
+        this.passengers = passengers;
     }
 }

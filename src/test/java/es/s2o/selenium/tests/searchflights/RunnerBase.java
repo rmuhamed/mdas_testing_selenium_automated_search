@@ -1,4 +1,4 @@
-package es.s2o.selenium.tests.reservations;
+package es.s2o.selenium.tests.searchflights;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.thucydides.core.ThucydidesSystemProperty;
