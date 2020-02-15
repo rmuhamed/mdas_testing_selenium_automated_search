@@ -6,7 +6,6 @@ public class SearchFlightCriteriaBuilder {
     private String origin;
     private String destination;
     private String outbound_date;
-    private String return_date;
     private Integer passengers;
 
     private SearchFlightCriteriaBuilder(){}
@@ -20,7 +19,6 @@ public class SearchFlightCriteriaBuilder {
        someSearchFlightCriteria.setOrigin(this.origin);
        someSearchFlightCriteria.setDestination(this.destination);
        someSearchFlightCriteria.setOutboundDate(this.outbound_date);
-       someSearchFlightCriteria.setReturnDate(this.return_date);
        someSearchFlightCriteria.setPassengers(this.passengers);
 
        return someSearchFlightCriteria;
@@ -38,11 +36,6 @@ public class SearchFlightCriteriaBuilder {
 
     public SearchFlightCriteriaBuilder withOutboundDate(String departureDate) {
         this.outbound_date = departureDate;
-        return this;
-    }
-
-    public SearchFlightCriteriaBuilder withReturnDate(String returnDate) {
-        this.return_date = return_date;
         return this;
     }
 

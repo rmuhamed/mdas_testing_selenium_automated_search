@@ -10,7 +10,6 @@ public class SearchFlightCriteriaDataBuilder {
                 .withOrigin("BCN")
                 .withDestination("MAD")
                 .withOutboundDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()))
-                .withReturnDate(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()))
                 .withPassengers(1);
     }
 

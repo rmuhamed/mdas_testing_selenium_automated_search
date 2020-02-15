@@ -1,20 +1,25 @@
 package es.s2o.selenium.pages;
 
-import es.s2o.selenium.domain.SearchFlightCriteriaDto;
+import es.s2o.selenium.domain.FlightDTO;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
-import java.util.List;
 
 public class SearchFlightPage extends PageObjectBase {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     // Form
-    @FindBy(className = "form-input origin")
-    private List<WebElementFacade> origin;
+    @FindBy(css = "#tab-search > div > form > div:nth-child(1) > div.form-input.origin")
+    private WebElementFacade origin;
+
+    @FindBy(className = "searchbar-popup cities-sugestion-popup show")
+    private WebElementFacade originList;
+
+    @FindBy(xpath = "/html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/input")
     private WebElementFacade destination;
     private WebElementFacade txtOutboundDate;
     private WebElementFacade txtReturnDate;
@@ -25,11 +30,14 @@ public class SearchFlightPage extends PageObjectBase {
     private WebElementFacade btnSubmitHomeSearcher;
     private WebElementFacade idCookiePolicyCloseOption;
 
-    public void addCriteria(SearchFlightCriteriaDto criteriaDto) {
-        LOGGER.debug("search for a flight starts, reservation: [{}]", criteriaDto);
+    public void addCriteria(FlightDTO flightDTO) {
+        LOGGER.debug("search for a flight starts, reservation: [{}]", flightDTO);
 
         idCookiePolicyCloseOption.click();
-        origin.get(0).click();
+
+        destination.click();
+        destination.sendKeys(flightDTO.getDestination());
+        destination.sendKeys(Keys.TAB);
 //        selectFromDropdown(txtDestination, criteriaDto.getDestination());
 //        display.click();
 //        typeInto(txtOutboundDate, criteriaDto.getOutbound_date());

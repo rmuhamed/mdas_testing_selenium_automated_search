@@ -4,7 +4,6 @@ public class SearchFlightCriteria {
     private String origin;
     private String destination;
     private String outboundDate;
-    private String returnDate;
     private Integer passengers;
 
     public String getOrigin() {
@@ -29,14 +28,6 @@ public class SearchFlightCriteria {
 
     public void setOutboundDate(String outboundDate) {
         this.outboundDate = outboundDate;
-    }
-
-    public String getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(String returnDate) {
-        this.returnDate = returnDate;
     }
 
     public Integer getPassengers() {

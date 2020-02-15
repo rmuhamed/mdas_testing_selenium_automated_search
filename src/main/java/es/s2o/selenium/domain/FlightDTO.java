@@ -1,15 +1,13 @@
 package es.s2o.selenium.domain;
 
-import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
-
-public class SearchFlightCriteriaDto {
+public class FlightDTO {
     private String origin;
     private String destination;
     private String outbound_date;
     private String return_date;
     private String passengers;
 
-    public SearchFlightCriteriaDto() {}
+    public FlightDTO() {}
 
     public String getOrigin() {
         return origin;
