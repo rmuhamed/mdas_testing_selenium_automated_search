@@ -1,6 +1,6 @@
-package es.s2o.selenium.pages;
+package es.salle.rmuhamed.selenium.pages;
 
-import es.s2o.selenium.domain.FlightDTO;
+import es.salle.rmuhamed.selenium.domain.FlightDTO;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.WebElement;

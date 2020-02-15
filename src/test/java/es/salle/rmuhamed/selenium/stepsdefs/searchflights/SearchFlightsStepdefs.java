@@ -1,14 +1,14 @@
-package es.s2o.selenium.stepsdefs.searchflights;
+package es.salle.rmuhamed.selenium.stepsdefs.searchflights;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import es.s2o.selenium.domain.FlightDTO;
-import es.s2o.selenium.pages.FlightListPage;
-import es.s2o.selenium.pages.SearchFlightPage;
-import es.s2o.selenium.services.SearchFlightsService;
+import es.salle.rmuhamed.selenium.domain.FlightDTO;
+import es.salle.rmuhamed.selenium.pages.FlightListPage;
+import es.salle.rmuhamed.selenium.pages.SearchFlightPage;
+import es.salle.rmuhamed.selenium.services.SearchFlightsService;
 import net.thucydides.core.annotations.Steps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

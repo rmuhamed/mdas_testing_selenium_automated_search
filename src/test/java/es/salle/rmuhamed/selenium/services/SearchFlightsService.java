@@ -1,7 +1,7 @@
-package es.s2o.selenium.services;
+package es.salle.rmuhamed.selenium.services;
 
-import es.s2o.selenium.builders.SearchFlightCriteriaDataBuilder;
-import es.s2o.selenium.domain.SearchFlightCriteria;
+import es.salle.rmuhamed.selenium.builders.SearchFlightCriteriaDataBuilder;
+import es.salle.rmuhamed.selenium.domain.SearchFlightCriteria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package es.s2o.selenium.domain;
+package es.salle.rmuhamed.selenium.domain;
 
 public class FlightDTO {
     private String origin;

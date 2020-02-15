@@ -1,6 +1,6 @@
-package es.s2o.selenium.builders;
+package es.salle.rmuhamed.selenium.builders;
 
-import es.s2o.selenium.domain.SearchFlightCriteria;
+import es.salle.rmuhamed.selenium.domain.SearchFlightCriteria;
 
 public class SearchFlightCriteriaBuilder {
     private String origin;

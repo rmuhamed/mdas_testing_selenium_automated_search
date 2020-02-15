@@ -1,4 +1,4 @@
-package es.s2o.selenium.builders;
+package es.salle.rmuhamed.selenium.builders;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
