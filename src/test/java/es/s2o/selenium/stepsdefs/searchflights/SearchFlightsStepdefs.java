@@ -58,7 +58,7 @@ public class SearchFlightsStepdefs {
 
         this.flights = flightDto;
 
-        this.searchFlightPage.addCriteria(this.flights.get(0));
+        this.searchFlightPage.addCriteria(flightDto.get(0));
     }
 
     @Then("^I get available flight$")
@@ -67,6 +67,6 @@ public class SearchFlightsStepdefs {
 
         List<FlightDTO> actualReservations = flightListPage.getFlights();
 
-        assertThat(actualReservations).as("Flight list").usingFieldByFieldElementComparator().containsExactlyElementsOf(flights);
+        assertThat(actualReservations).as("Flight list").usingFieldByFieldElementComparator().containsExactlyElementsOf(this.flights);
     }
 }

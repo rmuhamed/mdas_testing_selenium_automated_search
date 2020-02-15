@@ -9,5 +9,5 @@ Feature: Find available flights
     Given I'm in the main page
     When I try to find a flight
       | origin     | destination | outbound_date   | passengers |
-      | Barcelona  | Asturias    | NEXT_WEEK       |      1     |
+      | MAD        | ALC         | TODAY           |      1     |
     Then I get available flight

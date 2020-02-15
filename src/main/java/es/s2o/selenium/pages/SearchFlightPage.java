@@ -12,42 +12,27 @@ import java.lang.invoke.MethodHandles;
 public class SearchFlightPage extends PageObjectBase {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    // Form
-    @FindBy(css = "#tab-search > div > form > div:nth-child(1) > div.form-input.origin")
+    @FindBy(xpath = "/html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[1]/div/form/div[1]/div[1]/div[1]/input")
     private WebElementFacade origin;
-
-    @FindBy(className = "searchbar-popup cities-sugestion-popup show")
-    private WebElementFacade originList;
-
     @FindBy(xpath = "/html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/input")
     private WebElementFacade destination;
-    private WebElementFacade txtOutboundDate;
-    private WebElementFacade txtReturnDate;
-    private WebElementFacade txtBabiesNumber;
-    private WebElementFacade txtChildrenPassengersNumber;
-    private WebElementFacade txtAdultPassengersNumber;
+    @FindBy(id = "btnSubmitHomeSearcher")
+    private WebElementFacade searchButtonElement;
+    @FindBy(id = "idCookiePolicyCloseOption")
+    private WebElementFacade cookiesPolicyAcceptanceElement;
 
-    private WebElementFacade btnSubmitHomeSearcher;
-    private WebElementFacade idCookiePolicyCloseOption;
+    public void addCriteria(FlightDTO dto) {
+        LOGGER.debug("search for a flight starts");
 
-    public void addCriteria(FlightDTO flightDTO) {
-        LOGGER.debug("search for a flight starts, reservation: [{}]", flightDTO);
+        this.cookiesPolicyAcceptanceElement.click();
 
-        idCookiePolicyCloseOption.click();
+        this.origin.click();
+        this.origin.sendKeys(dto.getOrigin());
+        this.origin.sendKeys(Keys.TAB);
 
-        destination.click();
-        destination.sendKeys(flightDTO.getDestination());
-        destination.sendKeys(Keys.TAB);
-//        selectFromDropdown(txtDestination, criteriaDto.getDestination());
-//        display.click();
-//        typeInto(txtOutboundDate, criteriaDto.getOutbound_date());
-//        display.click();
-//        typeInto(txtAdultPassengersNumber, criteriaDto.getPassengers());
+        this.destination.sendKeys(dto.getDestination());
+        this.destination.sendKeys(Keys.TAB);
 
-        btnSubmitHomeSearcher.click();
-    }
-
-    private String getHiddenValue(){
-        return getDocument().getElementById("hiddenField").attr("value");
+        this.searchButtonElement.click();
     }
 }

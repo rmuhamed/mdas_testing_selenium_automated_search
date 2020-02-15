@@ -15,10 +15,10 @@ public class SearchFlightsService {
     public List<SearchFlightCriteria> addSearchFlightCriteria() {
         LOGGER.debug("addSearchFlightCriteria starts");
 
-        List<SearchFlightCriteria> searchFlightCriteriaDto = new ArrayList<>(1);
-        searchFlightCriteriaDto.add(this.generateSearchCriteria());
+        List<SearchFlightCriteria> searchFlightCriteria = new ArrayList<>(1);
+        searchFlightCriteria.add(this.generateSearchCriteria());
 
-        return searchFlightCriteriaDto;
+        return searchFlightCriteria;
     }
 
     private SearchFlightCriteria generateSearchCriteria() {
