@@ -1,19 +1,17 @@
 # MDAS - Fundamentos de pruebas - Práctica Selenium
 Project to test Serenity with Selenium and Cucumber
 
-* Demo project to know how to architecture a test project which has some complexity.
-* The project is following the Page Object pattern. Where a class express the interface of a page and nothing related to a test can be inside the class. So:
-  * No __webElement__ should be exposed from a page object.
-  * No assert can be done inside a page object. So, be careful if you write a mehtod to verify anything in a page class, ie returns a boolean, that your are not coupled to a test.
-  
 # Responsible
-Ricardo Ángel Muhamed ricardo.muhamed@gmail.com
+Ricardo Ángel Muhamed <ricardo.muhamed@gmail.com>
 
-## Getting started
-You can improve __everything__ in the project with a PR:
-* You need to create a git branch, following the naming convention _feature/whatever_
-* Make a pull request!
-* Thank you in advance for your contribution!!!!
+#Teacher
+Sergio Sacristan
+
+## Getting started - Overview
+Basic automated search through Vueling.com and structuring the application code following,
++ POM
++ Builder
++ Usage of WebElementFace 
     
 ### Structure
 
@@ -43,24 +41,12 @@ You can improve __everything__ in the project with a PR:
 
 ### Compilation
 * From IntelliJ: [See intelliJ config](docs/intelliJ.md).
-* From command line: 
+* From command line: gradle check
 
 ### Execution
 gradle test -Dcucumber.options="--tags @something"
 
-### Reports
-gradle  aggregate
+### Reports generation
+gradle aggregate
 
 Then you can check the dashboard from index.html, it's located inside ./target/serenity
-
-### CI
-
-* [See Jenkinsfile](Jenkinsfile) 
-
-```
-$ zalenium/docker-compose up -d
-```
-
-* Selenium Grid Console http://localhost:4444/grid/console
-* Zalenium http://localhost:4444/grid/admin/live
-
