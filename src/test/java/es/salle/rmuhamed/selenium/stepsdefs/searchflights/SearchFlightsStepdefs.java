@@ -65,8 +65,11 @@ public class SearchFlightsStepdefs {
     public void iGetAvailableFlight() throws Throwable {
         LOGGER.debug("iGetAvailableFlight starts");
 
-        List<FlightDTO> actualReservations = flightListPage.getFlights();
+        Integer availableFlights = this.flightListPage.getNumberOfAvailableFlights();
 
-        assertThat(actualReservations).as("Flight list").usingFieldByFieldElementComparator().containsExactlyElementsOf(this.flights);
+        assertThat(availableFlights)
+                .as("Quantity of available flights")
+                .isNotNull()
+                .isGreaterThanOrEqualTo(0);
     }
 }
