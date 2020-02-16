@@ -22,7 +22,7 @@ public class SearchFlightsStepdefs {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private static final String WEB_ROOT = "https://vueling.com/es/";
-    private static final String HOME = "reservationList.html";
+    public static final String TU_BUSQUEDA_LABEL = "Tu búsqueda:";
 
     @Steps
     private SearchFlightsService searchFlightsService;
@@ -65,11 +65,11 @@ public class SearchFlightsStepdefs {
     public void iGetAvailableFlight() throws Throwable {
         LOGGER.debug("iGetAvailableFlight starts");
 
-        Integer availableFlights = this.flightListPage.getNumberOfAvailableFlights();
+        String label = this.flightListPage.getTuBusquedaLabel();
 
-        assertThat(availableFlights)
-                .as("Quantity of available flights")
+        assertThat(label)
+                .as("Looking for tu busqueda label")
                 .isNotNull()
-                .isGreaterThanOrEqualTo(0);
+                .isEqualTo(TU_BUSQUEDA_LABEL);
     }
 }
