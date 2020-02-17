@@ -1,10 +1,20 @@
 package es.salle.rmuhamed.selenium.domain;
 
+import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamAlias;
+import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
+import es.salle.rmuhamed.selenium.converter.ToDateConverter;
+
 public class FlightDTO {
+    @XStreamAlias("origin")
     private String origin;
+    @XStreamAlias("destination")
     private String destination;
-    private String outbound_date;
-    private String return_date;
+    @XStreamAlias("outbound")
+    @XStreamConverter(ToDateConverter.class)
+    private String outboundDate;
+    @XStreamAlias("return")
+    private String inboundDate;
+    @XStreamAlias("passengers")
     private String passengers;
 
     public FlightDTO() {}
@@ -25,20 +35,12 @@ public class FlightDTO {
         this.destination = destination;
     }
 
-    public String getOutbound_date() {
-        return outbound_date;
+    public String getOutboundDate() {
+        return outboundDate;
     }
 
-    public void setOutbound_date(String outbound_date) {
-        this.outbound_date = outbound_date;
-    }
-
-    public String getReturn_date() {
-        return return_date;
-    }
-
-    public void setReturn_date(String return_date) {
-        this.return_date = return_date;
+    public void setOutbound(String outboundDate) {
+        this.outboundDate = outboundDate;
     }
 
     public String getPassengers() {
@@ -47,5 +49,13 @@ public class FlightDTO {
 
     public void setPassengers(String passengers) {
         this.passengers = passengers;
+    }
+
+    public String getInboundDate() {
+        return inboundDate;
+    }
+
+    public void setInbound(String inboundDate) {
+        this.inboundDate = inboundDate;
     }
 }

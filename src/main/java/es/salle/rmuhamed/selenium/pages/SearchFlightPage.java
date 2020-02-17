@@ -18,8 +18,10 @@ public class SearchFlightPage extends PageObjectBase {
     private WebElementFacade originElement;
     @FindBy(xpath = "/html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/input")
     private WebElementFacade destinationElement;
-    @FindBy(css = "#ui-datepicker-div > div.ui-datepicker-group.ui-datepicker-group-first > table > tbody > tr:nth-child(3) > td.ui-datepicker-week-end.ui-datepicker-days-cell-over.ui-datepicker-current-day.ui-datepicker-today")
-    private List<WebElement> datePickerElement;
+    @FindBy(xpath = "/html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[4]/div[3]/div/div[1]/table/tbody/tr[4]/td[1]")
+    private WebElement todayDatePickerElement;
+    @FindBy(xpath = "//html/body/div[3]/div[1]/vy-index-search/div/div[2]/div/div[1]/div/form/div[1]/div[3]/div[1]/div/input")
+    private WebElement dateElement;
     @FindBy(css = "#passengers-popup > div.passengers-popup_action > button")
     private List<WebElement> passengersButtonElement;
     @FindBy(id = "btnSubmitHomeSearcher")
@@ -39,7 +41,8 @@ public class SearchFlightPage extends PageObjectBase {
         this.destinationElement.sendKeys(dto.getDestination());
         this.destinationElement.sendKeys(Keys.TAB);
 
-        this.datePickerElement.get(0).click();
+        this.todayDatePickerElement.click();
+
 
         this.passengersButtonElement.get(0).click();
 

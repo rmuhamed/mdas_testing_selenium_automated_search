@@ -8,6 +8,6 @@ Feature: Find available flights
   Scenario: Initial search
     Given I'm in the main page
     When I try to find a flight
-      | origin     | destination | outbound_date   | passengers |
-      | MAD        | ALC         | TODAY           |      1     |
+      | Origin     | Destination | Outbound     | Return      | passengers |
+      | MAD        | ALC         | NEXT_WEEK    |             |      1     |
     Then I get available flight

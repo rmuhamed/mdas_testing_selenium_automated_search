@@ -5,7 +5,7 @@ import es.salle.rmuhamed.selenium.domain.SearchFlightCriteria;
 public class SearchFlightCriteriaBuilder {
     private String origin;
     private String destination;
-    private String outbound_date;
+    private String outboundDate;
     private Integer passengers;
 
     private SearchFlightCriteriaBuilder(){}
@@ -18,7 +18,7 @@ public class SearchFlightCriteriaBuilder {
        SearchFlightCriteria someSearchFlightCriteria = new SearchFlightCriteria();
        someSearchFlightCriteria.setOrigin(this.origin);
        someSearchFlightCriteria.setDestination(this.destination);
-       someSearchFlightCriteria.setOutboundDate(this.outbound_date);
+       someSearchFlightCriteria.setOutboundDate(this.outboundDate);
        someSearchFlightCriteria.setPassengers(this.passengers);
 
        return someSearchFlightCriteria;
@@ -34,8 +34,8 @@ public class SearchFlightCriteriaBuilder {
         return this;
     }
 
-    public SearchFlightCriteriaBuilder withOutboundDate(String departureDate) {
-        this.outbound_date = departureDate;
+    public SearchFlightCriteriaBuilder withOutboundDate(String outboundDate) {
+        this.outboundDate = outboundDate;
         return this;
     }
 
