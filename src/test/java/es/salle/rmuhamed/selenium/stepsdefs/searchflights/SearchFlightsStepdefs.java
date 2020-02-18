@@ -55,7 +55,6 @@ public class SearchFlightsStepdefs {
     }
 
     @When("^I try to find a flight$")
-    @Screenshots(forEachAction = true)
     public void iTryToFindAFlight(List<FlightDTO> flightDto) throws Throwable {
         LOGGER.debug("iTryToFindAFlight starts");
 
@@ -65,7 +64,6 @@ public class SearchFlightsStepdefs {
     }
 
     @Then("^I get available flight$")
-    @Screenshots(forEachAction = true)
     public void iGetAvailableFlight() throws Throwable {
         LOGGER.debug("iGetAvailableFlight starts");
 

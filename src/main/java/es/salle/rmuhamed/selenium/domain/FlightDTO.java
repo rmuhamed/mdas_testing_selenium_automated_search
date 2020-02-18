@@ -2,7 +2,7 @@ package es.salle.rmuhamed.selenium.domain;
 
 import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamAlias;
 import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
-import es.salle.rmuhamed.selenium.converter.ToDateConverter;
+import es.salle.rmuhamed.selenium.converter.ToDayOfMonthConverter;
 
 public class FlightDTO {
     @XStreamAlias("origin")
@@ -10,7 +10,7 @@ public class FlightDTO {
     @XStreamAlias("destination")
     private String destination;
     @XStreamAlias("outbound")
-    @XStreamConverter(ToDateConverter.class)
+    @XStreamConverter(ToDayOfMonthConverter.class)
     private String outboundDate;
     @XStreamAlias("return")
     private String inboundDate;

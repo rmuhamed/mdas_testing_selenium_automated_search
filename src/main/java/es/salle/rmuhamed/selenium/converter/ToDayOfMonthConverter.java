@@ -5,9 +5,9 @@ import cucumber.api.Transformer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class ToDateConverter extends Transformer<String> {
+public class ToDayOfMonthConverter extends Transformer<String> {
 
-    public static final String DATE_FORMAT = "dd/MM/yyyy";
+    public static final String DAY_OF_MONTH_FORMAT = "dd";
     public static final int ONE_WEEK_IN_DAYS = 7;
     public static final String NEXT_WEEK = "NEXT_WEEK";
     public static final String TODAY = "TODAY";
@@ -42,7 +42,7 @@ public class ToDateConverter extends Transformer<String> {
     }
 
     private String getDateBy(int daysInFuture) {
-        DateTimeFormatter desiredFormat = DateTimeFormatter.ofPattern(DATE_FORMAT);
+        DateTimeFormatter desiredFormat = DateTimeFormatter.ofPattern(DAY_OF_MONTH_FORMAT);
         LocalDate today = LocalDate.now();
         LocalDate dateInFuture = today.plusDays(daysInFuture);
 
